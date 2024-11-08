@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffccbc;
+            background-color: ;
+            color: #4e342e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        h1 {
+            color: #8d6e63;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.2em;
+            color: #6d4c41;
+            margin-bottom: 15px;
+        }
+
+        .thank-you-message {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #ff7043;
+            margin-top: 15px;
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+            margin: 20px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+        }
+
+        .home-btn, .review-btn {
+            padding: 15px 30px;
+            background-color: #ff7043;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none;
+            margin: 10px 5px;
+            display: inline-block;
+        }
+
+        .home-btn:hover, .review-btn:hover {
+            background-color: #e64a19;
+        }
+
+        .review-section {
+            display: none;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .review-section h3 {
+            font-size: 1.5em;
+            color: #8d6e63;
+            margin-bottom: 15px;
+        }
+
+        .review-section label {
+            font-size: 1.1em;
+            color: #6d4c41;
+        }
+
+        .review-section input[type="text"],
+        .review-section textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1em;
+        }
+
+        .submit-review-btn {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-review-btn:hover {
+            background-color: #388e3c;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="greeting">Thank You for Your Order!</h1>
+        <p class="thank-you-message">Your order has been placed successfully.</p>
+        <p>To confirm your payment, please scan the QR code below:</p>
+        
+        <img src="qr code.jpg" alt="QR Code for Payment">
+
+        <p>After completing your payment, you’ll receive a confirmation email with your order details.</p>
+        
+        <a href="index.html" class="home-btn">Back to Home</a>
+
+        <button class="review-btn" onclick="toggleReviewSection()">Leave a Review</button>
+
+        <div class="review-section" id="reviewSection">
+            <h3>We'd love to hear your thoughts!</h3>
+            <p>Please let us know how you enjoyed our chocolates, donuts, pastries, brownies, or hampers.</p>
+            
+            <label for="reviewItem">Select Item:</label>
+            <select id="reviewItem">
+                <option value="chocolates">Chocolates</option>
+                <option value="donuts">Donuts</option>
+                <option value="pastries">Pastries</option>
+                <option value="brownies">Brownies</option>
+                <option value="hampers">Hampers</option>
+            </select>
+
+            <label for="reviewText">Your Review:</label>
+            <textarea id="reviewText" rows="4" placeholder="Write your review here..."></textarea>
+
+            <button class="submit-review-btn" onclick="submitReview()">Submit Review</button>
+        </div>
+    </div>
+
+    <script>
+        
+        function displayGreeting() {
+            const hour = new Date().getHours();
+            let greeting;
+
+            if (hour < 12) {
+                greeting = "Good Morning! Thank You for Your Order!";
+            } else if (hour < 18) {
+                greeting = "Good Afternoon! Thank You for Your Order!";
+            } else {
+                greeting = "Good Evening! Thank You for Your Order!";
+            }
+
+            document.getElementById('greeting').textContent = greeting;
+        }
+
+        function toggleReviewSection() {
+            const reviewSection = document.getElementById('reviewSection');
+            reviewSection.style.display = reviewSection.style.display === 'none' ? 'block' : 'none';
+        }
+
+        
+        function submitReview() {
+            const item = document.getElementById('reviewItem').value;
+            const reviewText = document.getElementById('reviewText').value;
+
+            if (reviewText.trim() === '') {
+                alert('Please enter your review before submitting.');
+                return;
+            }
+
+            alert(`Thank you for reviewing our ${item}! We appreciate your feedback.`);
+            document.getElementById('reviewText').value = ''; 
+            document.getElementById('reviewSection').style.display = 'none'; 
+        }
+
+        window.onload = displayGreeting;
+    </script>
+</body>
+</html>

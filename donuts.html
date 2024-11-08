@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Our Donuts</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffebee;
+            color: #4e342e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-container {
+            background-color: #d32f2f;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .header-container h1 {
+            font-size: 2em;
+            margin: 0;
+            color: #ffccbc;
+            font-weight: bold;
+        }
+
+        
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        
+        .search-bar {
+            width: 60%;  
+            max-width: 300px; 
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #d32f2f;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar:focus {
+            border-color: #b71c1c;
+            outline: none;
+            box-shadow: 0px 0px 8px rgba(211, 47, 47, 0.5);
+        }
+
+        
+        .donut-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 90%;
+            gap: 10px;
+            max-width: 1200px;
+        }
+
+        .donut-card {
+            background-color: #ffccbc;
+            width: calc(20% - 10px); 
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .donut-card img {
+            width: 100%;
+            height: 150px; 
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .donut-card h2 {
+            font-size: 1.2em;
+            color: #b71c1c;
+            margin-bottom: 5px;
+        }
+
+        .donut-card p {
+            margin: 5px 0;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        .buy-button {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-top: 8px;
+            background-color: #e64a19;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #ea2c81;
+        }
+
+        @media (max-width: 768px) {
+            .donut-card {
+                width: calc(33.33% - 10px); 
+            }
+        }
+
+        @media (max-width: 480px) {
+            .donut-card {
+                width: 100%; 
+            }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .back-to-home {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            background-color: #d32f2f; 
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px; 
+        
+        .back-to-home:hover {
+            background-color: #b71c1c;
+        }
+    }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <h1>Explore Our Donuts</h1>
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search for a donuts..." onkeyup="searchChocolates()">
+        </div>
+    </div>
+
+    <div class="donut-container">
+        <div class="donut-card">
+            <h2>Chocolate Glaze</h2>
+            <img src="chocolate glaze.jpg" alt="Chocolate Glaze">
+            <p>Classic chocolate glazed donut.</p>
+            <p class="price">$2.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Strawberry Frosted</h2>
+            <img src="strawberry frosted.jpg" alt="Strawberry Frosted">
+            <p>Sweet strawberry frosting with sprinkles.</p>
+            <p class="price">$2.75</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Blueberry Bliss</h2>
+            <img src="Blueberry Cake Donut Recipe.jpg" alt="Blueberry Bliss">
+            <p>Delicious blueberry-filled donut.</p>
+            <p class="price">$3.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Cinnamon Sugar</h2>
+            <img src="cinnamon sugar.jpg" alt="Cinnamon Sugar">
+            <p>Classic cinnamon sugar-coated donut.</p>
+            <p class="price">$2.25</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Maple Bar</h2>
+            <img src="Maple Glazed Donuts [1_5 Hours].jpg" alt="Maple Bar">
+            <p>Maple-flavored frosting on a bar-shaped donut.</p>
+            <p class="price">$2.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Vanilla Sprinkle</h2>
+            <img src="vanilla sprinkle.jpg" alt="Vanilla Sprinkle">
+            <p>Vanilla frosted donut with colorful sprinkles.</p>
+            <p class="price">$2.75</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Powdered Sugar</h2>
+            <img src="powdered sugar.jpg" alt="Powdered Sugar">
+            <p>Lightly dusted with powdered sugar.</p>
+            <p class="price">$2.25</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Apple Cider</h2>
+            <img src="apple cider.jpg" alt="Apple Cider">
+            <p>Spiced apple cider donut with a hint of cinnamon.</p>
+            <p class="price">$3.25</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Boston Cream</h2>
+            <img src="boston cream.jpg" alt="Boston Cream">
+            <p>Filled with creamy custard and topped with chocolate.</p>
+            <p class="price">$3.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Glazed Twist</h2>
+            <img src="Glazed Twist.jpg" alt="Glazed Twist">
+            <p>Twisted donut with a classic glaze.</p>
+            <p class="price">$2.75</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Pumpkin Spice</h2>
+            <img src="pumpkin spice.jpg" alt="Pumpkin Spice">
+            <p>Seasonal pumpkin flavor with warm spices.</p>
+            <p class="price">$3.25</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Peanut Butter Delight</h2>
+            <img src="Peanut Butter Delight.jpg" alt="Peanut Butter Delight">
+            <p>Rich peanut butter glaze on a soft donut.</p>
+            <p class="price">$3.75</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Chocolate Sprinkled</h2>
+            <img src="Chocolate Sprinkled.jpg" alt="Chocolate Sprinkled">
+            <p>Chocolate frosting with vibrant sprinkles.</p>
+            <p class="price">$2.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Red Velvet</h2>
+            <img src="red velvet donuts!.jpg" alt="Red Velvet">
+            <p>Red velvet donut with cream cheese frosting.</p>
+            <p class="price">$3.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Glazed Chocolate</h2>
+            <img src="Glazed Chocolate.jpg" alt="Glazed Chocolate">
+            <p>Chocolate donut with a smooth glaze.</p>
+            <p class="price">$2.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Coconut Crunch</h2>
+            <img src="coconut crunch.jpg" alt="Coconut Crunch">
+            <p>Coconut-flavored donut with shredded coconut.</p>
+            <p class="price">$3.25</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>S’mores</h2>
+            <img src="S’mores.jpg" alt="S’mores">
+            <p>Graham cracker, marshmallow, and chocolate goodness.</p>
+            <p class="price">$4.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Honey Glazed</h2>
+            <img src="honey glazed.jpg" alt="Honey Glazed">
+            <p>Light and sweet honey glaze on a classic donut.</p>
+            <p class="price">$2.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Espresso Shot</h2>
+            <img src="Espresso Shot.jpg" alt="Espresso Shot">
+            <p>Coffee-infused donut for espresso lovers.</p>
+            <p class="price">$3.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="donut-card">
+            <h2>Matcha Green Tea</h2>
+            <img src="Matcha Green Tea.jpg" alt="Matcha Green Tea">
+            <p>Light and earthy matcha-infused donut.</p>
+            <p class="price">$3.75</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+    </div>
+    <a href="index.html" class="back-to-home">Back to Home</a>
+    <script>
+        function searchChocolates() {
+            const input = document.querySelector('.search-bar').value.toLowerCase();
+            const items = document.querySelectorAll('.donut-card');
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(input) ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

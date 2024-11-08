@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craving Hub</title>
+    <style>
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ead4d7;  
+            color: #170202;
+            line-height: 1.8;
+            padding: 40px 20px;
+            transition: background-color 0.3s ease;
+            
+        }
+
+        header {
+            background-color:#d32f2f; 
+            color: rgb(239, 232, 232);
+            padding: 50px 20px;
+            border-radius: 12px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in-out;
+            img{
+                float: left;
+                width: 8%;
+            }
+        }
+
+        h1 {
+            font-size: 3.5em;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        nav {
+            margin-bottom: 50px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-size: 1.2em;
+            color: #fdfcfc;
+            background-color: #d32f2f;
+            padding: 10px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #3383ecbd;
+            transform: translateY(-3px);
+        }
+
+        section {
+            margin-bottom: 80px;
+            display: flex;
+            align-items: center;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color:#d32f2f ;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #ff7f50;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 20px;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            font-size: 1.3em;
+            color: white;
+            max-width: 900px;
+            margin: 20px;
+            line-height: 1.6;
+            font-weight: 600; 
+        }
+
+        footer {
+            background-color:#d32f2f; 
+            color: rgb(230, 208, 208);
+            padding: 40px;
+            text-align: center;
+            margin-top: 60px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1.5s ease-in-out;
+        }
+
+        footer p {
+            font-size: 1.6em;
+            margin: 10px 0;
+            color: white;
+        }
+
+        footer a {
+            color: #1303f3;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: rgb(225, 201, 201);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            section {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+
+            h2 {
+                font-size: 2em;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .text-content {
+    max-width: 900px;
+    position: relative;
+}
+
+p {
+    font-size: 1.3em;
+    color: #444;
+    line-height: 1.6;
+    font-weight: 600;
+    margin-bottom: 40px; 
+}
+
+.explore-button {
+    display: flex;
+    justify-content: center;
+}
+
+.explore-button a {
+    padding: 12px 25px;
+    background-color: #8c2c0a; 
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.explore-button a:hover {
+    background-color: #ff6347; 
+    transform: translateY(-3px);
+}
+
+.achievements {
+    background-color: #fbe4d5;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.achievements h2 {
+    color: #8c2c0a;
+    text-transform: uppercase;
+    border-bottom: 2px solid #ff7f50;
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 2em;
+    letter-spacing: 0.5px;
+}
+
+.achievements p, .achievements ul li {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.achievements ul.achievements-list {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.toggle-button {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.toggle-button button {
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: #fff;
+    background-color: #8c2c0a;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.toggle-button button:hover {
+    background-color: #ff6347;
+    transform: translateY(-3px);
+}
+
+
+
+    </style>
+</head>
+<body>
+   
+    <header> 
+        <img src="craving hub.png" alt="" >
+        <h1>CRAVING HUB</h1>
+    </header>
+       
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="choclates.html">Chocolates</a></li>
+            <li><a href="cakes.html">Cakes</a></li>
+            <li><a href="brownie.html">Brownie</a></li>
+            <li><a href="desert.html">Deserts</a></li>
+            <li><a href="gift-hamper.html">Hampers</a></li>
+            <li><a href="donuts.html">Donuts</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <h2>Chocolates</h2>
+        <img src="choclates.jpg" alt="Chocolates">
+        <div class="text-content">
+        <p>Chocolate, made from cacao beans, is a globally adored treat enjoyed in many forms, from dark and bittersweet to creamy milk and white varieties. Originally consumed as a spicy, bitter drink by ancient civilizations like the Maya and Aztecs, chocolate has evolved into a sweet delight. Dark chocolate is known for its rich flavor and potential health benefits due to its antioxidants, while milk chocolate is creamy and popular among all ages. Chocolate has become synonymous with celebrations and gifting, and its production now often focuses on ethical sourcing to support cacao farmers and protect the environment.</p>
+        <div class="explore-button">
+                <a href="choclates.html">Explore Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Brownie</h2>
+        <img src="brownies.jpg" alt="Brownies">
+        <div class="text-content">
+        <p>Brownies are a rich, chocolatey dessert loved for their dense, fudgy texture and intense flavor. Originating in the United States, brownies combine simple ingredients like butter, sugar, eggs, and flour with plenty of chocolate, resulting in a treat that’s both decadent and versatile. They can be made chewy or cakey, depending on the recipe, and are often enhanced with additions like nuts, chocolate chips, or swirls of caramel. Served warm with a scoop of ice cream or enjoyed on their own, brownies are a comforting classic that satisfy chocolate cravings perfectly.</p>
+        <div class="explore-button">
+                <a href="brownie.html">Explore Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Cakes</h2>
+        <img src="Sponge Classic Victoria Cakes Recipe Delicious (1).jpg" alt="Cakes">
+        <div class="text-content">
+            <p>
+                Cakes are beloved desserts enjoyed for their soft, airy texture and endless flavor possibilities. Made by combining flour, sugar, eggs, butter, and baking powder, cakes can range from simple vanilla or chocolate layers to intricate, multi-tiered creations decorated with frosting and fondant. They’re a staple at celebrations worldwide, symbolizing joy and festivity. From spongy chiffon and dense pound cakes to rich cheesecakes and fruity upside-down varieties, cakes come in countless styles and flavors, allowing for endless creativity. Whether for birthdays, weddings, or just as a sweet treat, cakes add a special touch to any occasion.
+            </p>
+            <div class="explore-button">
+                <a href="cakes.html">Explore Now</a>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>pastry</h2>
+        <img src="pastry.jpg" alt="deserts">
+        <div class="text-content">
+        <p>Pastry is a delicious and versatile baked good made from a dough of flour, fat, and water, often with a light, flaky, or crumbly texture. It’s used as a base for a wide range of sweet and savory creations, from fruit-filled tarts and creamy éclairs to meat pies and savory quiches. Pastry can be prepared in various styles, including puff pastry, which has delicate, airy layers, and shortcrust, which is tender and buttery. Skilled bakers craft pastries to achieve unique textures and flavors, making them a popular choice for desserts, breakfast items, and appetizers worldwide.</p>
+        <div class="explore-button">
+                <a href="desert.html">Explore Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Donuts</h2>
+        <img src="donouts.jpg" alt="Donuts">
+        <div class="text-content">
+        <p>Donuts are a beloved fried pastry, known for their soft, fluffy texture and endless varieties. Made from a sweet, yeasted dough or cake batter, donuts are typically fried until golden and then topped with glaze, powdered sugar, or icing. They come in many shapes and flavors, with the classic ring shape and filled donuts being the most popular. Fillings range from fruit jams and custards to chocolate and cream, while toppings can be as simple as sprinkles or as elaborate as bacon bits. Whether enjoyed as a breakfast treat or an indulgent snack, donuts are a sweet favorite around the world.</p>
+        <div class="explore-button">
+                <a href="donuts.html">Explore Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Hampers</h2>
+        <img src="hamper.jpg" alt="Hampers">
+        <div class="text-content">
+        <p>Dessert hampers are delightful gift baskets filled with an assortment of sweet treats, perfect for any occasion. These hampers often include a variety of desserts, such as chocolates, cookies, pastries, cakes, and sometimes even specialty items like macarons or fudge. Beautifully packaged, dessert hampers are a popular choice for gifting during holidays, birthdays, or celebrations, offering something to satisfy every sweet tooth. Many are thoughtfully curated with a mix of flavors and textures, making them an ideal way to indulge and share the joy of desserts with friends and family.</p>
+        <div class="explore-button">
+                <a href="gift-hamper.html">Explore Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="achievements">
+        <h2>Our Achievements & Certifications</h2>
+        <div class="achievements-content" id="achievementsContent">
+            <p>At Craving Hub, we believe in delivering excellence and innovation with every bite. Our commitment to quality, taste, and sustainable practices has earned us numerous accolades and certifications. Here are some of our proudest accomplishments:</p>
+            
+            <ul class="achievements-list">
+                <li><strong>Gold Medal at the National Dessert Championship (2023):</strong> Honored for our signature Chocolate Truffle Cake, loved for its rich flavors and flawless texture.</li>
+                <li><strong>Organic & Sustainable Ingredients Certification:</strong> Every dessert we make uses certified organic and sustainably sourced ingredients, ensuring a treat that’s both delicious and eco-conscious.</li>
+                <li><strong>Pastry Artisans Excellence Award (2022):</strong> Recognized for exceptional creativity and skill in crafting desserts with a unique twist.</li>
+                <li><strong>Best Dessert Business Award (2021):</strong> Awarded by the Dessert Guild for outstanding customer satisfaction, quality, and innovation in product offerings.</li>
+                <li><strong>ISO 22000:2018 Food Safety Management Certification:</strong> We uphold the highest standards in food safety and hygiene, ensuring every product meets global quality benchmarks.</li>
+                <li><strong>Five-Star Rating from Dessert Lovers Association:</strong> Achieved consistently for our range of cakes, pastries, and chocolates.</li>
+            </ul>
+    
+            <p>These recognitions are a testament to our dedication to bringing you the finest, most innovative desserts. We’re committed to maintaining these standards and pushing the boundaries of dessert artistry.</p>
+        </div>
+        <div class="toggle-button">
+            <button onclick="toggleAchievements()" id="toggleButton">Show More</button>
+        </div>
+    </section>
+    
+    <script>
+        function toggleAchievements() {
+            const content = document.getElementById("achievementsContent");
+            const button = document.getElementById("toggleButton");
+    
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+                button.textContent = "Show Less";
+            } else {
+                content.style.display = "none";
+                button.textContent = "Show More";
+            }
+        }
+    
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("achievementsContent").style.display = "none";
+        });
+    </script>
+    
+
+    <footer>
+        <p>Contact us: <strong>9896098922</strong></p>
+        <p>Email: <a href="mailto:shrutidhawan@gmail.com">shrutidhawan@gmail.com</a></p>
+        <p>Lovely Professional University</p>
+    </footer>
+ 
+</body>
+</html>

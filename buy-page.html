@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Page - Buy Now</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #ffccbc;
+            color: #4e342e; 
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .container:hover {
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: #8d6e63;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        select,
+        textarea {
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.1em;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #ff7043;
+            outline: none;
+        }
+
+        label {
+            font-size: 1.2em;
+            color: #6d4c41;
+            font-weight: bold;
+            text-align: left;
+            margin-bottom: 8px;
+        }
+
+        .customization-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .customization-options {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .customization-options input {
+            width: 30%;
+        }
+
+        .submit-btn {
+            padding: 15px 25px;
+            background-color: #ff7043;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #e64a19;
+        }
+
+        select {
+            background-color: #ffe0b2;
+        }
+
+        select option {
+            background-color: #ffe0b2;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Order Your Favorite Pastry or Dessert</h1>
+        <form action="/submit-order" method="POST">
+            
+            <div>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            
+            <div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+            </div>
+
+            
+            <div>
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="Enter your delivery address" required>
+            </div>
+
+            
+            <div>
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" name="quantity" min="1" max="100" placeholder="Enter quantity" required>
+            </div>
+
+            <div>
+                <label for="type">Select Product Type</label>
+                <select id="type" name="type" required>
+                    <option value="donut">Donut</option>
+                    <option value="chocolate">Chocolate</option>
+                    <option value="brownie">Brownie</option>
+                    <option value="pastry">Pastry</option>
+                    <option value="hamper">Gift Hamper</option>
+                    <option value="cake">Cake</option>
+                </select>
+            </div>
+
+            <div id="donut-selection" class="customization-label">
+                <label for="donut-type">Select Your Donut</label>
+                <select id="donut-type" name="donut-type">
+                    <option value="classic">Classic Donut</option>
+                    <option value="glazed">Glazed Donut</option>
+                    <option value="chocolate">Chocolate Donut</option>
+                    <option value="strawberry">Strawberry Donut</option>
+                    <option value="blueberry">Blueberry Donut</option>
+                    <option value="jelly-filled">Jelly-filled Donut</option>
+                    <option value="sprinkles">Sprinkles Donut</option>
+                    <option value="cinnamon">Cinnamon Donut</option>
+                    <option value="maple">Maple Donut</option>
+                    <option value="coconut">Coconut Donut</option>
+                    <option value="cream-filled">Cream-filled Donut</option>
+                    <option value="apple-fritter">Apple Fritter Donut</option>
+                    <option value="powdered">Powdered Sugar Donut</option>
+                    <option value="boston-cream">Boston Cream Donut</option>
+                    <option value="caramel">Caramel Donut</option>
+                    <option value="chocolate-glazed">Chocolate-glazed Donut</option>
+                    <option value="mocha">Mocha Donut</option>
+                    <option value="peanut-butter">Peanut Butter Donut</option>
+                    <option value="lemon">Lemon Donut</option>
+                    <option value="hazelnut">Hazelnut Donut</option>
+                </select>
+            </div>
+
+            <div id="chocolate-selection" class="customization-label" style="display: none;">
+                <label for="chocolate-type">Select Your Chocolate</label>
+                <select id="chocolate-type" name="chocolate-type">
+                    <option value="classic-fudge">Classic Fudge</option>
+                    <option value="chewy">Chewy Brownie</option>
+                    <option value="cakey">Cakey Brownie</option>
+                    <option value="blondie">Blondie</option>
+                    <option value="nutella">Nutella Brownie</option>
+                    <option value="salted-caramel">Salted Caramel Brownie</option>
+                    <option value="peanut-butter">Peanut Butter Brownie</option>
+                    <option value="cheesecake">Cheesecake Brownie</option>
+                    <option value="rocky-road">Rocky Road Brownie</option>
+                    <option value="mint">Mint Brownie</option>
+                    <option value="espresso">Espresso Brownie</option>
+                    <option value="smores">S’mores Brownie</option>
+                    <option value="chocolate-chunk">Chocolate Chunk Brownie</option>
+                    <option value="avocado">Avocado Brownie</option>
+                    <option value="raspberry">Raspberry Brownie</option>
+                    <option value="triple-chocolate">Triple Chocolate Brownie</option>
+                    <option value="sundae">Brownie Sundae</option>
+                    <option value="vegan">Vegan Brownie</option>
+                    <option value="gluten-free">Gluten-Free Brownie</option>
+                    <option value="matcha">Matcha Brownie</option>
+                </select>
+            </div>
+
+            <div id="brownie-selection" class="customization-label" style="display: none;">
+                <label for="brownie-type">Select Your Brownie</label>
+                <select id="brownie-type" name="brownie-type">
+                    <option value="classic-fudge">Classic Fudge Brownie</option>
+                    <option value="chewy">Chewy Brownie</option>
+                    <option value="cakey">Cakey Brownie</option>
+                    <option value="blondie">Blondie</option>
+                    <option value="nutella">Nutella Brownie</option>
+                    <option value="salted-caramel">Salted Caramel Brownie</option>
+                    <option value="peanut-butter">Peanut Butter Brownie</option>
+                    <option value="cheesecake">Cheesecake Brownie</option>
+                    <option value="rocky-road">Rocky Road Brownie</option>
+                    <option value="mint">Mint Brownie</option>
+                    <option value="espresso">Espresso Brownie</option>
+                    <option value="smores">S’mores Brownie</option>
+                    <option value="chocolate-chunk">Chocolate Chunk Brownie</option>
+                    <option value="avocado">Avocado Brownie</option>
+                    <option value="raspberry">Raspberry Brownie</option>
+                    <option value="triple-chocolate">Triple Chocolate Brownie</option>
+                    <option value="sundae">Brownie Sundae</option>
+                    <option value="vegan">Vegan Brownie</option>
+                    <option value="gluten-free">Gluten-Free Brownie</option>
+                    <option value="matcha">Matcha Brownie</option>
+                </select>
+            </div>
+
+            <div id="pastry-selection" class="customization-label" style="display: none;">
+                <label for="pastry-type">Select Your Pastry</label>
+                <select id="pastry-type" name="pastry-type">
+                    <option value="croissant">Croissant</option>
+                    <option value="danish">Danish</option>
+                    <option value="eclair">Eclair</option>
+                    <option value="fruit-tart">Fruit Tart</option>
+                    <option value="cinnamon-roll">Cinnamon Roll</option>
+                    <option value="pain-au-chocolat">Pain au Chocolat</option>
+                    <option value="cream-puff">Cream Puff</option>
+                    <option value="baklava">Baklava</option>
+                    <option value="macaron">Macaron</option>
+                    <option value="mille-feuille">Mille-feuille</option>
+                    <option value="profiteroles">Profiteroles</option>
+                    <option value="chouquette">Chouquette</option>
+                    <option value="almond-croissant">Almond Croissant</option>
+                    <option value="scones">Scones</option>
+                    <option value="caramelized-pear">Caramelized Pear Tart</option>
+                    <option value="black-forest">Black Forest Pastry</option>
+                    <option value="lavender">Lavender Pastry</option>
+                    <option value="mango">Mango Pastry</option>
+                    <option value="chocolate-mousse">Chocolate Mousse</option>
+                </select>
+            </div>
+
+            <div id="hamper-selection" class="customization-label" style="display: none;">
+                <label for="hamper-type">Select Your Gift Hamper</label>
+                <select id="hamper-type" name="hamper-type">
+                    <option value="chocolate">Chocolate Hamper</option>
+                    <option value="baked-goods">Baked Goods Hamper</option>
+                    <option value="fruit">Fruit Hamper</option>
+                    <option value="mixed">Mixed Hamper</option>
+                    <option value="spa">Spa Hamper</option>
+                    <option value="gourmet">Gourmet Hamper</option>
+                    <option value="holiday">Holiday Hamper</option>
+                    <option value="baby">Baby Hamper</option>
+                    <option value="birthday">Birthday Hamper</option>
+                    <option value="christmas">Christmas Hamper</option>
+                    <option value="wine">Wine Hamper</option>
+                    <option value="tea">Tea Hamper</option>
+                    <option value="coffee">Coffee Hamper</option>
+                    <option value="luxury">Luxury Hamper</option>
+                    <option value="celebration">Celebration Hamper</option>
+                    <option value="new-year">New Year Hamper</option>
+                    <option value="thank-you">Thank You Hamper</option>
+                    <option value="get-well-soon">Get Well Soon Hamper</option>
+                    <option value="romantic">Romantic Hamper</option>
+                </select>
+            </div>
+
+            <div id="cake-selection" class="customization-label" style="display: none;">
+                <label for="cake-type">Select Your Cake</label>
+                <select id="cake-type" name="cake-type">
+                    <option value="chocolate">Chocolate Cake</option>
+                    <option value="vanilla">Vanilla Cake</option>
+                    <option value="red-velvet">Red Velvet Cake</option>
+                    <option value="carrot">Carrot Cake</option>
+                    <option value="cheesecake">Cheesecake</option>
+                    <option value="strawberry">Strawberry Cake</option>
+                    <option value="lemon">Lemon Cake</option>
+                    <option value="coffee">Coffee Cake</option>
+                    <option value="almond">Almond Cake</option>
+                    <option value="coconut">Coconut Cake</option>
+                    <option value="blueberry">Blueberry Cake</option>
+                    <option value="pound">Pound Cake</option>
+                    <option value="chiffon">Chiffon Cake</option>
+                    <option value="banana">Banana Cake</option>
+                    <option value="hazelnut">Hazelnut Cake</option>
+                    <option value="cherry">Cherry Cake</option>
+                    <option value="black-forest">Black Forest Cake</option>
+                    <option value="apple">Apple Cake</option>
+                    <option value="marble">Marble Cake</option>
+                </select>
+            </div>
+
+            <div class="customization-options">
+                <div>
+                    <label for="extra">Add Extras</label>
+                    <input type="checkbox" id="extra" name="extra" value="sprinkles"> Sprinkles
+                    <input type="checkbox" id="extra" name="extra" value="whipped-cream"> Whipped Cream
+                    <input type="checkbox" id="extra" name="extra" value="nuts"> Nuts
+                </div>
+            </div>
+
+            <a href="submit.html" class="submit-btn">Place Order</a>
+        </form>
+    </div>
+
+    <script>
+        
+        const typeSelect = document.getElementById('type');
+        const donutSelection = document.getElementById('donut-selection');
+        const chocolateSelection = document.getElementById('chocolate-selection');
+        const brownieSelection = document.getElementById('brownie-selection');
+        const pastrySelection = document.getElementById('pastry-selection');
+        const hamperSelection = document.getElementById('hamper-selection');
+        const cakeSelection = document.getElementById('cake-selection');
+        
+        typeSelect.addEventListener('change', function () {
+            
+            donutSelection.style.display = 'none';
+            chocolateSelection.style.display = 'none';
+            brownieSelection.style.display = 'none';
+            pastrySelection.style.display = 'none';
+            hamperSelection.style.display = 'none';
+            cakeSelection.style.display = 'none';
+
+            
+            if (typeSelect.value === 'donut') donutSelection.style.display = 'block';
+            if (typeSelect.value === 'chocolate') chocolateSelection.style.display = 'block';
+            if (typeSelect.value === 'brownie') brownieSelection.style.display = 'block';
+            if (typeSelect.value === 'pastry') pastrySelection.style.display = 'block';
+            if (typeSelect.value === 'hamper') hamperSelection.style.display = 'block';
+            if (typeSelect.value === 'cake') cakeSelection.style.display = 'block';
+        });
+    </script>
+</body>
+</html>

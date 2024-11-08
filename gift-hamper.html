@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Our Dessert Hampers</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffebee;
+            color: #4e342e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-container {
+            background-color: #d32f2f;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .header-container h1 {
+            font-size: 2em;
+            margin: 0;
+            color: #ffccbc;
+            font-weight: bold;
+        }
+
+    
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+    
+        .search-bar {
+            width: 60%;  
+            max-width: 300px; 
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #d32f2f;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar:focus {
+            border-color: #b71c1c;
+            outline: none;
+            box-shadow: 0px 0px 8px rgba(211, 47, 47, 0.5);
+        }
+
+        .hamper-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 90%;
+            gap: 10px;
+            max-width: 1200px;
+        }
+
+        .hamper-card {
+            background-color: #ffccbc;
+            width: calc(20% - 10px); 
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hamper-card img {
+            width: 100%;
+            height: 150px; 
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .hamper-card h2 {
+            font-size: 1.2em;
+            color: #b71c1c;
+            margin-bottom: 5px;
+        }
+
+        .hamper-card p {
+            margin: 5px 0;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #bf360c;
+        }
+
+        .buy-button {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-top: 8px;
+            background-color: #e64a19;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #ea2c81;
+        }
+
+        @media (max-width: 768px) {
+            .hamper-card {
+                width: calc(33.33% - 10px); 
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hamper-card {
+                width: 100%; 
+            }
+        }
+        .back-to-home {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            background-color: #d32f2f; 
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px; 
+        }
+
+       
+        .back-to-home:hover {
+            background-color: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <h1>Explore Our hampers</h1>
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search for a hampers..." onkeyup="searchChocolates()">
+        </div>
+    </div>
+
+    
+    <div class="hamper-container">
+        <div class="hamper-card">
+            <h2>Chocolate Indulgence Hamper</h2>
+            <img src="Chocolate Indulgence Hamper.jpg" alt="Chocolate Indulgence Hamper">
+            <p>A selection of premium chocolates and truffles.</p>
+            <p class="price">$29.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Fruit Delight Hamper</h2>
+            <img src="Fruit Delight Hamper.jpg" alt="Fruit Delight Hamper">
+            <p>Assorted fresh and dried fruits with a sweet touch.</p>
+            <p class="price">$24.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Pastry Paradise Hamper</h2>
+            <img src="Pastry Paradise Hamper.jpg" alt="Pastry Paradise Hamper">
+            <p>Delicious pastries and tarts, perfect for a treat.</p>
+            <p class="price">$32.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Caramel Lovers Hamper</h2>
+            <img src="Caramel Lovers Hamper.jpg" alt="Caramel Lovers Hamper">
+            <p>Decadent caramel-based sweets and treats.</p>
+            <p class="price">$26.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Cookie Dough Hamper</h2>
+            <img src="Cookie Dough Hamper.jpg" alt="Cookie Dough Hamper">
+            <p>Fresh and delicious cookie dough treats.</p>
+            <p class="price">$22.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Ice Cream Dream Hamper</h2>
+            <img src="Ice Cream Dream Hamper.jpg" alt="Ice Cream Dream Hamper">
+            <p>Assortment of gourmet ice cream flavors.</p>
+            <p class="price">$28.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Mini Cake Hamper</h2>
+            <img src="Macaron Magic Hamper.jpg" alt="Mini Cake Hamper">
+            <p>Miniature cakes in a variety of flavors.</p>
+            <p class="price">$24.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Donut Surprise Hamper</h2>
+            <img src="Donut Surprise Hamper.jpg" alt="Donut Surprise Hamper">
+            <p>A box of delicious gourmet donuts in multiple flavors.</p>
+            <p class="price">$21.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Brownie Basket Hamper</h2>
+            <img src="brownie basket hamper.jpg" alt="Brownie Basket Hamper">
+            <p>A variety of rich, chocolatey brownies.</p>
+            <p class="price">$29.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Cheesecake Delight Hamper</h2>
+            <img src="cheesecake delight hamper.jpg" alt="Cheesecake Delight Hamper">
+            <p>Assorted cheesecakes with delicious fruit toppings.</p>
+            <p class="price">$34.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Chocolate Truffle Hamper</h2>
+            <img src="Chocolate Truffle Hamper.jpg" alt="Chocolate Truffle Hamper">
+            <p>Exquisite selection of truffles made with the finest chocolate.</p>
+            <p class="price">$35.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Fruit Cake Hamper</h2>
+            <img src="Fruit Cake Hamper.jpg" alt="Fruit Cake Hamper">
+            <p>Delicious homemade fruit cakes topped with dried fruits and nuts.</p>
+            <p class="price">$26.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Nutty Crunch Hamper</h2>
+            <img src="Nutty Crunch Hamper.jpg" alt="Nutty Crunch Hamper">
+            <p>A delightful mix of caramelized nuts and crunchy treats.</p>
+            <p class="price">$23.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Cupcake Lovers Hamper</h2>
+            <img src="cupcake lovers HAMPER.jpg" alt="Cupcake Lovers Hamper">
+            <p>Assorted cupcakes with rich frosting and vibrant toppings.</p>
+            <p class="price">$19.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Gourmet Chocolate Box Hamper</h2>
+            <img src="gourmet chocolate box hamper.jpg" alt="Gourmet Chocolate Box Hamper">
+            <p>A box filled with an assortment of premium chocolates.</p>
+            <p class="price">$39.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Macaron Magic Hamper</h2>
+            <img src="macaron magic hamper.jpg" alt="Macaron Magic Hamper">
+            <p>Colorful macarons with a variety of fillings.</p>
+            <p class="price">$28.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Pecan Pie Hamper</h2>
+            <img src="pecan pie hamper.jpg" alt="Pecan Pie Hamper">
+            <p>Sweet and rich pecan pies with a flaky crust.</p>
+            <p class="price">$27.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Baklava Basket Hamper</h2>
+            <img src="baklava basket hamper.jpg" alt="Baklava Basket Hamper">
+            <p>Sweet and flaky baklava pieces with a nutty filling.</p>
+            <p class="price">$32.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Snacks & Sweets Hamper</h2>
+            <img src="snacks & sweets hamper.jpg" alt="Snacks & Sweets Hamper">
+            <p>A mix of sweet and savory treats for every palate.</p>
+            <p class="price">$19.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="hamper-card">
+            <h2>Vegan Delight Hamper</h2>
+            <img src="vegan delight hamper.jpg" alt="Vegan Delight Hamper">
+            <p>Delicious vegan-friendly desserts for a guilt-free indulgence.</p>
+            <p class="price">$30.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+    </div>
+    <a href="index.html" class="back-to-home">Back to Home</a>
+    <script>
+        function searchChocolates() {
+            const input = document.querySelector('.search-bar').value.toLowerCase();
+            const items = document.querySelectorAll('.hamper-card');
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(input) ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>  

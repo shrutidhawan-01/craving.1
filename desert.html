@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Our Famous deserts</title>
+    <style>
+    
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffebee;
+            color: #4e342e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header-container {
+            background-color: #d32f2f;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        .header-container h1 {
+            font-size: 2em;
+            margin: 0;
+            color: #ffccbc;
+            font-weight: bold;
+        }
+
+    
+        .search-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        
+        .search-bar {
+            width: 60%;  
+            max-width: 300px; 
+            padding: 8px;
+            font-size: 14px;
+            border: 1px solid #d32f2f;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar:focus {
+            border-color: #b71c1c;
+            outline: none;
+            box-shadow: 0px 0px 8px rgba(211, 47, 47, 0.5);
+        }
+
+        .deserts-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 90%;
+            gap: 10px;
+            max-width: 1200px;
+        }
+
+        .deserts-card {
+            background-color: #ffccbc;
+            width: calc(20% - 10px); 
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeIn 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .deserts-card img {
+            width: 100%;
+            height: 150px; 
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .deserts-card h2 {
+            font-size: 1.2em;
+            color: #b71c1c;
+            margin-bottom: 5px;
+        }
+
+        .deserts-card p {
+            margin: 5px 0;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #bf360c;
+        }
+
+        .buy-button {
+            display: inline-block;
+            padding: 8px 16px;
+            margin-top: 8px;
+            background-color: #e64a19;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .buy-button:hover {
+            background-color: #ea2c81;
+        }
+
+        @media (max-width: 768px) {
+            .pastry-card {
+                width: calc(33.33% - 10px); 
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pastry-card {
+                width: 100%; 
+            }
+        }
+        .back-to-home {
+            display: inline-block;
+            padding: 10px 20px;
+            color: white;
+            background-color: #d32f2f;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px; 
+        }
+
+        
+        .back-to-home:hover {
+            background-color: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-container">
+        <h1>Explore Our Deserts</h1>
+        <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search for a deserts..." onkeyup="searchChocolates()">
+        </div>
+    </div>
+
+    <div class="deserts-container">
+        <div class="deserts-card">
+            <h2>Croissant</h2>
+            <img src="croissant.jpg" alt="Croissant">
+            <p>Flaky, buttery, and light, the classic French pastry that’s perfect for breakfast.</p>
+            <p class="price">$3.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Éclair</h2>
+            <img src="Éclair.jpg" alt="Éclair">
+            <p>Delicious pastry filled with cream and topped with a glossy chocolate glaze.</p>
+            <p class="price">$5.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Madeleine</h2>
+            <img src="madeleine.jpg" alt="Madeleine">
+            <p>Small, shell-shaped sponge cakes that are light and delicate.</p>
+            <p class="price">$4.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Churros</h2>
+            <img src="churros.jpg" alt="Churros">
+            <p>Crunchy on the outside and soft on the inside, covered in cinnamon sugar.</p>
+            <p class="price">$3.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Palmiers</h2>
+            <img src="palmiers.jpg" alt="Palmiers">
+            <p>Sweet, flaky pastries with a caramelized sugar crust, shaped like a palm leaf.</p>
+            <p class="price">$4.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Strudel</h2>
+            <img src="strudel.jpg" alt="Strudel">
+            <p>A thin pastry filled with fruits like apple or cherry, often served warm.</p>
+            <p class="price">$5.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Baklava</h2>
+            <img src="baklava.jpg" alt="Baklava">
+            <p>Layers of phyllo dough filled with nuts and sweet syrup, a delightful Middle Eastern treat.</p>
+            <p class="price">$6.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Profiteroles</h2>
+            <img src="profiteroles.jpg" alt="Profiteroles">
+            <p>Light choux pastry filled with cream or custard, often topped with chocolate glaze.</p>
+            <p class="price">$4.99</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Tart</h2>
+            <img src="tart.jpg" alt="Tart">
+            <p>A pastry shell filled with fruit, custard, or ganache.</p>
+            <p class="price">$5.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Fruit Danish</h2>
+            <img src="fruit danish.jpg" alt="Fruit Danish">
+            <p>A buttery pastry filled with a sweet fruit filling like apple, cherry, or raspberry.</p>
+            <p class="price">$4.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Turnovers</h2>
+            <img src="turnovers.jpg" alt="Turnovers">
+            <p>Flaky pastries filled with sweet or savory fillings, such as apple or cheese.</p>
+            <p class="price">$4.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Danishes</h2>
+            <img src="danishes.jpg" alt="Danishes">
+            <p>A sweet, flaky pastry with a variety of fillings like cream cheese, custard, or fruit.</p>
+            <p class="price">$5.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Rugelach</h2>
+            <img src="rugelach.jpg" alt="Rugelach">
+            <p>A Jewish pastry filled with fruit preserves, chocolate, or nuts.</p>
+            <p class="price">$3.75</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Oysters</h2>
+            <img src="oysters.jpg" alt="Oysters">
+            <p>A delicate puff pastry with a rich, creamy filling, often paired with savory ingredients.</p>
+            <p class="price">$6.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Chocolatine</h2>
+            <img src="chocolatine.jpg" alt="Chocolatine">
+            <p>Similar to a croissant but filled with a piece of chocolate for a sweet twist.</p>
+            <p class="price">$3.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Clafoutis</h2>
+            <img src="clafoutis.jpg" alt="Clafoutis">
+            <p>A baked French dessert, often made with cherries and a flan-like batter.</p>
+            <p class="price">$5.25</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Chausson aux Pommes</h2>
+            <img src="chausson aux pommes.jpg" alt="Chausson aux Pommes">
+            <p>French apple turnovers made with puff pastry and filled with sweet apples.</p>
+            <p class="price">$4.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Saint-Honoré</h2>
+            <img src="Saint-Honoré.jpg" alt="Saint-Honoré">
+            <p>A French pastry consisting of puff pastry, cream puffs, and caramel.</p>
+            <p class="price">$6.50</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+
+        <div class="deserts-card">
+            <h2>Financier</h2>
+            <img src="financier.jpg" alt="Financier">
+            <p>A small almond cake with a crisp, buttery texture, often served in a rectangular shape.</p>
+            <p class="price">$3.00</p>
+            <a href="buy-page.html" class="buy-button">Buy Now</a>
+        </div>
+    </div>
+    <a href="index.html" class="back-to-home">Back to Home</a>
+    <script>
+        function searchChocolates() {
+            const input = document.querySelector('.search-bar').value.toLowerCase();
+            const items = document.querySelectorAll('.deserts-card');
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(input) ? 'block' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>
